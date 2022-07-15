@@ -1,0 +1,20 @@
+#tela{
+    background:black;
+    width:500px;
+    height:500px;
+    color:white;
+    text-align:center;
+}
+ 
+#textoDentroDaTela{
+    padding-top:200px;
+    font-size:20px;
+}
+
+body{
+    background-color: black;
+}
+
+h2, h4{
+    color:white;
+}

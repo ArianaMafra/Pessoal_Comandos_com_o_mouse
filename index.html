@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet"  type="text/css" href="style.css">
+    
+    </head>
+
+    <body>
+        <center>
+            <h2>Comandos com o mouse</h2>
+            <h4>Mouse clica e segura na tela : vermelho</h4>
+            <h4>Mouse em cima da tela :verde</h4>
+            <h4>Mouse em sai de cima da tela :cinza</h4>
+            <h4>Mouse depois que clica :azul</h4>
+            <h4>Mouse clicado e se movendo na tela :roxo</h4>
+        
+
+        
+            <div id = "tela" onmousedown="mouseDown()" onmouseup="mouseUp()">
+            <p id="textoDentroDaTela"></p>
+            </div>
+        </center>
+        
+        <script>
+            tela = document.getElementById('tela');
+            mouse_event="empty";
+            textoDentroDaTela = document.getElementById('textoDentroDaTela');
+
+            tela.addEventListener("mousedown", function (e) {
+            mouse_event="clicked";
+	        tela.style.background = "red";
+            textoDentroDaTela.innerHTML = "MOUSE DOWN";
+        });
+
+        tela.addEventListener("mousemove", function (e) {
+                tela.style.background = "green";
+                textoDentroDaTela.innerHTML = "MOUSE MOVE";
+
+                if(mouse_event == "clicked"){
+                    tela.style.background = "purple";
+                    textoDentroDaTela.innerHTML = "MOUSE MOVE + CLIKED";
+                }
+        
+        });
+
+        tela.addEventListener("mouseup", function (e) {
+	        tela.style.background = "blue";
+            mouse_event="mouseup";
+            textoDentroDaTela.innerHTML = "MOUSE UP";
+        });
+
+        tela.addEventListener("mouseleave", function (e) {
+	        tela.style.background = "gray";
+            mouse_event="mouseleave";
+            textoDentroDaTela.innerHTML = "MOUSE LEAVE";
+        });
+
+        </script>
+        
+    </body>
+</html>
